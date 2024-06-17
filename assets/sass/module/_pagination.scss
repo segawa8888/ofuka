@@ -1,0 +1,42 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// pagination
+// -----------------------------------------------------------------
+
+.pagination_lists {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination_list.active {
+    background-color: $orange1;
+}
+
+.pagination_list.active a {
+    color: $white;
+}
+
+.pagination_list {
+    color: $black;
+    @include font-rem(16);
+    line-height: calc(22 / 16);
+    padding:8px 14px;
+    border:1px solid  $orange1;
+    text-align: center;
+    transition: 0.3s;
+    &:hover {
+        background-color: $orange1;
+        a {
+            color:$white;
+            text-decoration: none;
+        }
+    }
+}
+
+.pagination_list:nth-child(n+2) {
+    margin-left: 11px;
+}

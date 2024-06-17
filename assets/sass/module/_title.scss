@@ -1,0 +1,36 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// タイトル
+// -----------------------------------------------------------------
+// 主にh2
+.md-ttl1 {
+  color: $orange1;
+
+  @include font-rem(23);
+
+  @media #{$mq-md} {
+    @include font-rem(35);
+  }
+}
+
+// 主にh3
+.md-ttl2 {
+  padding-left: 8px;
+  font-weight: bold;
+  border-left: 4px solid $orange1;
+
+  @include font-rem(16);
+}
+
+// 主にページタイトル
+.md-ttl3 {
+  line-height: 1;
+  color: $orange1;
+
+  @include font-rem(35);
+
+  @media #{$mq-md} {
+    @include font-rem(48);
+  }
+}

@@ -1,0 +1,37 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// 下層ページ main visual background-image
+// -----------------------------------------------------------------
+
+.pg-news_bg {
+    background-image: url('../images/news/news-main.jpg');
+}
+
+.pg-contact_bg {
+    background-image: url('../images/contact/contact-main.jpg');
+}
+
+.pg-ps_bg {
+    background-image: url('../images/Parts&Services/pg-ps-main.jpg');
+}
+
+.pg-links_bg {
+    background-image: url('../images/links/links.jpg');
+}
+
+.pg-about_bg {
+    @media #{$mq-md} {
+        background-image: url('../images/about/about-mb-pc.jpg');
+        background-size: cover;
+        margin-top: -55px;
+        padding-bottom: 78px;
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+}
+
+.pg-live_bg {
+    background-image: url('../images/live/live-back.jpg');
+}

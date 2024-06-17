@@ -1,0 +1,721 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// new cars
+// -----------------------------------------------------------------
+.pg-cars {
+  padding-bottom: 50px;
+
+  @media #{$mq-md} {
+    display: grid;
+    grid-template-columns: 1fr 288px;
+    gap: 20px;
+    align-items: start;
+    padding-bottom: 90px;
+  }
+}
+
+// -----------------------------------------------------------------
+// sort
+// -----------------------------------------------------------------
+.pg-cars-sort-wrap {
+  display: grid;
+  grid-template-columns: auto 150px;
+  gap: 10px;
+  align-items: center;
+  justify-content: end;
+  margin-top: 15px;
+
+  @media #{$mq-md} {
+    margin-top: 0;
+  }
+}
+
+// -----------------------------------------------------------------
+// カード
+// -----------------------------------------------------------------
+// 全体layout
+.pg-cars-card {
+  display: grid;
+  grid-template-rows: auto auto auto auto 1fr auto auto;
+  grid-template-columns: 115px 1fr;
+  gap: 10px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: 1px solid $border;
+  border-radius: 5px;
+
+  @media #{$mq-md} {
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: 188px 1fr 176px;
+  }
+
+  .pg-cars-card-name {
+    grid-column: 1/3;
+    
+    @media #{$mq-md} {
+      grid-column: 2/3;
+    }
+  }
+
+  .pg-cars-card-num {
+    grid-column: 1/3;
+
+    @media #{$mq-md} {
+      grid-row: 4/6;
+      margin-top: -30px;
+    }
+  }
+
+  .pg-cars-card-img {
+    grid-row: 3/5;
+
+    @media #{$mq-md} {
+      grid-row: 1/4;
+      grid-column: 1/2;
+    }
+  }
+
+  .pg-cars-card-btn-wrap {
+    grid-row: 5/8;
+    grid-column: 1/2;
+
+    @media #{$mq-md} {
+      grid-row: 5/6;
+      grid-column: 3/4;
+    }
+  }
+  
+  .pg-cars-card-price-wrap {
+    grid-row: 3/4;
+    grid-column: 2/3;
+
+    @media #{$mq-md} {
+      grid-row: 1/2;
+      grid-column: 3/4;
+    }
+  }
+
+  .pg-cars-card-date-list {
+    grid-row: 4/6;
+    grid-column: 2/3;
+
+    @media #{$mq-md} {
+      grid-row: 2/3;
+      grid-column: 2/4;
+    }
+  }
+
+  .pg-cars-card-table-wrap {
+    display: none;
+
+    @media #{$mq-md} {
+      display: block;
+      grid-row: 3/5;
+      grid-column: 2/4;
+    }
+  }
+
+  .pg-cars-option-list {
+    grid-row: 6/8;
+    grid-column: 2/3;
+
+    @media #{$mq-md} {
+      grid-row: 5/6;
+    }
+  }
+}
+
+.pg-cars-card-name a {
+  font-weight: bold;
+  line-height: 1.3;
+  color: $blue;
+  text-decoration: underline;
+}
+
+.pg-cars-card-num {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  @include font-rem(12);
+
+  @media #{$mq-md} {
+    display: block;
+    line-height: 1.5;
+
+    @include font-rem(14);
+  }
+
+  li+li::before {
+    display: inline-block;
+    margin-inline: 5px;
+    content: '/';
+
+    @media #{$mq-md} {
+      display: none;
+    }
+  }
+}
+
+.pg-cars-card-img {
+  @media #{$mq-md} {
+    position: relative;
+  }
+
+    .label-recommend {
+      display: none;
+      @media #{$mq-md} {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 23px;
+      padding-right: 7px;
+      padding-left: 5px;
+      font-weight: bold;
+      color: #fff;
+      background: rgb(235,143,50);
+      background: linear-gradient(180deg, rgba(235,143,50,1) 0%, rgba(239,203,124,1) 50%, rgba(193,89,25,1) 100%);
+  
+      &::before {
+        position: absolute;
+        top: 0;
+        left: -15px;
+        display: block;
+        width: 15px;
+        height: 23px;
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+        content: '';
+        background: rgb(235,143,50);
+        background: linear-gradient(180deg, rgba(235,143,50,1) 0%, rgba(239,203,124,1) 50%, rgba(193,89,25,1) 100%);
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 115/87;
+  }
+}
+
+.pg-cars-card-btn {
+  display: block;
+  padding: 15px 5px;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px rgb(0 0 0 / 15%);
+
+  @include font-rem(17);
+
+  @media #{$mq-md} {
+    display: grid;
+    place-items: center;
+    height: 100%;
+  }
+}
+
+.pg-cars-card-price-wrap {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: end;
+
+  .label {
+    color: $gray;
+
+    @include font-rem(14);
+  }
+
+  .price {
+    font-weight: bold;
+    color: $orange1;
+
+    @include font-rem(23);
+  }
+}
+
+.pg-cars-card-date-list {
+  display: grid;
+  gap: 5px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  @media #{$mq-md} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: 1fr 5em;
+    gap: 10px;
+    font-feature-settings: "palt";
+
+    @media #{$mq-md} {
+      grid-template-rows: min-content min-content;
+      grid-template-columns: 1fr;
+      gap: 0;
+      place-items: center;
+      line-height: 1.5;
+    }
+  }
+
+  .label {
+    color: $gray;
+
+    @include font-rem(12);
+
+    @media #{$mq-md} {
+      @include font-rem(14);
+    }
+  }
+
+  .item {
+    font-weight: bold;
+
+    @include font-rem(13);
+
+    @media #{$mq-md} {
+      @include font-rem(16);
+    }
+  }
+}
+
+.pg-cars-card-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    width: 25%;
+    height: 2em;
+    text-align: center;
+    border: 1px solid $border;
+
+    @include font-rem(13);
+  }
+
+  th {
+    font-weight: normal;
+    line-height: 1;
+    background-color: $tableTh;
+  }
+
+  .txt-sm {
+    @include font-rem(9);
+
+    display: block;
+  }
+}
+
+.pg-cars-option-list {
+  gap: 3px;
+
+  @media #{$mq-md} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  li {
+    display: grid;
+    align-items: center;
+    padding: 3px;
+    font-feature-settings: "palt";
+    line-height: 1;
+
+    @include font-rem(9);
+  }
+}
+
+// ページャー
+.pg-cars-pager {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 0;
+  margin: 20px 0 0;
+  list-style-type: none;
+
+  @media #{$mq-md} {
+    gap: 10px;
+    margin-top: 45px;
+  }
+
+  a {
+    @media #{$mq-md} {
+      padding: 2px 8px;
+      line-height: 1;
+      border: 1px solid $orange1;
+
+      &:hover {
+        text-decoration: none;
+        background-color: darken(#fff, 5%);
+      }
+    }
+  }
+}
+
+a.pg-cars-pager-arrow {
+  color: $orange1;
+
+  @media #{$mq-md} {
+    color: #000;
+  }
+}
+
+a.is-active {
+  color: $orange1;
+
+  @media #{$mq-md} {
+    color: #fff;
+    background-color: $orange1;
+
+    &:hover {
+      background-color: darken($orange1, 5%);
+    }
+  }
+}
+
+.pg-cars-pager-rote,
+.pg-cars-pager-more {
+  display: none;
+
+  @media #{$mq-md} {
+    display: block;
+  }
+}
+
+// next, prev
+.pg-cars-pager-arrow {
+  .label {
+    display: none;
+
+    @media #{$mq-md} {
+      display: inline-block;
+    }
+  }
+
+  .arrow {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-repeat: no-repeat;
+    background-position: top 50% left 50%;
+    background-size: contain;
+
+    @media #{$mq-md} {
+      display: none;
+    }
+  }
+}
+
+.pg-cars-pager-arrow--prev {
+  .arrow {
+    background-image: url('../images/arrow_left_orange.svg');
+  }
+}
+
+.pg-cars-pager-arrow--next {
+  .arrow {
+    background-image: url('../images/arrow_right_orange.svg');
+  }
+}
+
+// -----------------------------------------------------------------
+// filter ボタン
+// -----------------------------------------------------------------
+.pg-cars-filter-btn {
+  position: fixed;
+  right: 0;
+  bottom: 25px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  padding: 15px;
+  line-height: 1;   /* 中央ぴったり */
+  cursor: pointer;
+  background-color: #F7F7F7;
+  border-radius: 3px 0 0 3px;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 15%);
+
+  @media #{$mq-md} {
+    display: none;
+  }
+
+  .label {
+    font-weight: bold;
+  }
+}
+
+// -----------------------------------------------------------------
+//  filter 内容
+// -----------------------------------------------------------------
+.pg-cars-side {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 75px;
+
+  @media #{$mq-md} {
+    padding: 35px 30px;
+  }
+}
+
+.pg-cars-search {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  gap: 10px;
+
+  @media #{$mq-md} {
+    grid-template-columns: 1fr;
+  }
+
+  .md-ttl2 {
+    margin: 0;
+    line-height: 1.3;
+  }
+}
+
+.pg-cars-search--center {
+  align-items: center;
+}
+
+// year
+.pg-cars-search-year-item {
+  line-height: 1;
+  text-align: center;
+
+  .node {
+    display: inline-block;
+    transform: rotate(90deg);
+
+    @include font-rem(13);
+  }
+}
+
+.pg-cars-search-year-item--select {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+// 2列ver
+.pg-cars-search-wide {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  .node {
+    @include font-rem(11);
+  }
+}
+
+// 色
+.pg-cars-search--color {
+  grid-template-columns: 1fr;
+}
+
+.pg-cars-search-color {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding-inline: 10px;
+
+  @media #{$mq-md} {
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 0;
+  }
+}
+
+.pg-cars-search-checkbox {
+  @include font-rem(11);
+
+  .color {
+    display: inline-block;
+    width: 4em;
+    font-feature-settings: "palt";
+    line-height: 16px;
+    text-align: center;
+    background-color: #F0F0F0;
+    border: 1px solid $border;
+
+    &.color--perl {
+      background-image: linear-gradient(45deg, #fff, #E2D9B6, #fff);
+    }
+
+    &.color--white {
+      background-color: #fff;
+    }
+
+    &.color--yellow {
+      background-color: #FFF500;
+    }
+
+    &.color--orange {
+      background-color: #FFB100;
+    }
+
+    &.color--red {
+      color: #fff;
+      background-color: #F00;
+    }
+
+    &.color--wine {
+      color: #fff;
+      background-color: #D30E7F;
+    }
+
+    &.color--pink {
+      background-color: #FFB2D9;
+    }
+
+    &.color--purple {
+      color: #fff;
+      background-color: #E36FFF;
+    }
+
+    &.color--blue {
+      color: #fff;
+      background-color: #0045FF;
+    }
+
+    &.color--green {
+      color: #fff;
+      background-color: #179512;
+    }
+
+    &.color--brown {
+      color: #fff;
+      background-color: #935A17;
+    }
+
+    &.color--beige {
+      background-color: #E8C595;
+    }
+
+    &.color--gold {
+      background-image: linear-gradient(45deg, #DDB252, #F8EFDB, #DDB252);
+    }
+
+    &.color--silver {
+      background-image: linear-gradient(45deg, #C6C6C6, #F7F7F7, #C6C6C6);
+    }
+
+    &.color--gray {
+      color: #fff;
+      background-color: #969696;
+    }
+
+    &.color--black {
+      color: #fff;
+      background-color: #000;
+    }
+  }
+
+  .unit {
+    color: #AAA;
+
+    &.unit--full {
+      color: #000;
+    }
+  }
+
+  input[type="checkbox"] + .pg-cars-search-checkbox-label::before {
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    margin-right: 2px;
+  }
+}
+
+.pg-cars-search-checkbox-label {
+  display: inline-block;
+}
+
+// 三択ラジオボタン
+.pg-cars-search-3choice {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.pg-cars-search-radio {
+  input[type="radio"] + .pg-cars-search-radio-label::before {
+    background-color: #fff;
+  }
+
+  input[type="radio"]:checked + .pg-cars-search-radio-label::before {
+    background-color: $orange1;
+    border: 1px solid #CECECE;
+  }
+
+  input[type="radio"]:checked + .pg-cars-search-radio-label::after {
+    display: none;
+  }
+}
+
+.pg-cars-search-radio-label {
+  @include font-rem(14);
+}
+
+// オプション
+.pg-cars-search-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.pg-cars-search-piton-checkbox {
+  font-feature-settings: "palt";
+
+  @include font-rem(13);
+
+  input[type="checkbox"] + .pg-cars-search-piton-checkbox-label::before {
+    top: 4px;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    background-color: #fff;
+  }
+}
+
+// フォーム部品
+.pg-cars-search-select {
+  select {
+    background-color: #fff;
+  }
+}
+
+// ボタン
+.pg-cars-search-btn-wrap {
+  text-align: center;
+}
+
+.pg-cars-search-btn {
+  width: 210px;
+  padding-block: 7px;
+  line-height: 1;
+  cursor: pointer;
+  border: none;
+  appearance: none;
+
+  @include font-rem(17);
+
+  @media #{$mq-md} {
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 15%);
+  }
+}

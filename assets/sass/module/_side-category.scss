@@ -1,0 +1,65 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// News 一覧 side-Category
+// -----------------------------------------------------------------
+
+.md-side-category_title {
+    display: none;
+    @media #{$mq-md} {
+        display: block;
+        padding-left: 12px;
+        @include font-rem(24);
+        line-height: calc(33 / 24);
+        font-weight: bold;
+        border-left: 4px solid $orange1;
+      }
+}
+
+.md-side-category_lists {
+    display: flex;
+    list-style: none;
+    padding: 0 20px;
+    width: 100%;
+    overflow-x: scroll;
+    margin-bottom: 0;
+    @media #{$mq-md} {
+        display: block;
+        padding: 0;
+        padding-left: 12px;
+    }
+    &::-webkit-scrollbar {
+        display:none;
+    }
+}
+
+.md-side-category_list {
+    text-align: center;
+    @include font-rem(14);
+    line-height: calc(19 / 14);
+    font-weight: bold;
+    @media #{$mq-md} {
+        text-align: left;
+    }
+}
+
+.md-side-category_list a {
+    color: #B9B9B9;
+    white-space: nowrap;
+}
+
+.md-side-category_list.active a {
+    color:$black;
+}
+
+.md-side-category_list:nth-child(n+2) {
+    border-left:2px solid $orange1;
+    padding-left: 38px;
+    margin-left: 38px;
+    @media #{$mq-md} {
+        border-left:initial;
+        padding: 0;
+        margin-left:initial;
+        margin-top: 27px;
+    }
+}

@@ -1,0 +1,18 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// 下層ページ main visual
+// -----------------------------------------------------------------
+
+.md-page-mv {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    padding-top: calc(146.68 / 375 * 100vw);
+    @media #{$mq-md} {
+      padding-top: 180.05px;
+      }
+}

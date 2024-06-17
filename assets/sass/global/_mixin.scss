@@ -1,0 +1,38 @@
+// ------------------------------------------------------
+// fonts
+// ブラウザ標準16pxを基準にremで算出する
+// ------------------------------------------------------
+@mixin font-rem($size) {
+  font-size: $size + px;
+  font-size: ($size / 16) + rem;
+}
+
+// ------------------------------------------------------
+// fonts
+// 375pxのデバイスを基準にvwで算出する
+// ------------------------------------------------------
+@function get_vw($size, $viewport: 375) {
+  $rate: 100 / $viewport;
+
+  @return $rate * $size * 1vw;
+}
+
+// baseは10px
+@mixin fz_vw($font_size: 10) {
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
+}
+
+// ------------------------------------------------------
+// グラデーション
+// ------------------------------------------------------
+@mixin gradient($direction, $color-1, $color-2) {
+  background-image: linear-gradient($direction, $color-1, $color-2);
+}
+
+// ------------------------------------------------------
+// トランジション
+// ------------------------------------------------------
+@mixin transition($time: 0.2) {
+  transition: all $time * 1s ease-in-out;
+}

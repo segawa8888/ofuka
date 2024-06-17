@@ -1,0 +1,83 @@
+@use '../global' as *;
+
+// -----------------------------------------------------------------
+// Live Auction
+// -----------------------------------------------------------------
+
+.pg-live-title h2 {
+    @media #{$mq-md} {
+        margin-left: -44.5rem;
+       }
+}
+
+.pg-live {
+    margin-top: 50px;
+    margin-bottom: 70px;
+    @media #{$mq-md} {
+        margin-top: 102px;
+        margin-bottom: 164px;
+        padding:0 80px;
+        }
+}
+
+.pg-live-item {
+    @media #{$mq-md} {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+       }
+}
+
+.pg-live-item:nth-child(even) {
+    @media #{$mq-md} {
+        flex-direction: row-reverse;
+       }
+}
+
+.pg-live-item:nth-child(n+2) {
+    margin-top: 30px;
+    @media #{$mq-md} {
+        margin-top: 55px;
+       }
+}
+
+.pg-live-item_img {
+    img {
+        width: 100%;
+    }
+    @media #{$mq-md} {
+        max-width: 352px;
+       }
+}
+
+.pg-live-item_text {
+    @include font-rem(16);
+    line-height: calc(23/16);
+    margin-top: 20px;
+    @media #{$mq-md} {
+        max-width: 453px;
+        @include font-rem(23);
+        line-height: calc(35 / 23);
+       }
+}
+
+.pg-live_slider {
+    margin-top: 30px;
+    @media #{$mq-md} {
+        display: flex;
+        justify-content: center;
+        gap:0 26px;
+        margin-top: 61px;
+       }
+}
+
+.pg-live_text {
+    margin-top: 42px;
+    @include font-rem(16);
+    line-height: calc(23 / 16);
+    @media #{$mq-md} {
+        margin-top: 34px;
+        @include font-rem(23);
+        line-height: calc(35 / 23);
+    }
+}

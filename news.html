@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>News</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/modern-reset.css">
+  <link rel="stylesheet" href="./assets/css/slick/slick-theme.css">
+  <link rel="stylesheet" href="./assets/css/slick/slick.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <!-- JS(ライブラリ) -->
+  <script src="./assets/js/jquery-3.7.0.min.js"></script>
+  <script src="./assets/js/slick.min.js"></script>
+</head>
+
+<body>
+  
+  <div class="ly-header">
+    <!-- SP用header -->
+    <header class="ly-header-sp">
+      <h1 class="header-logo">
+        <a href="/">
+          <img src="./assets/images/header_logo_black.svg" alt="logo: OFUKA INTERNATIONAL INC.">
+        </a>
+      </h1>
+      <div class="md-lang-btn">
+        <div class="lang-btn">
+          <input type="radio" name="lang_change_btn_sp" id="lang_change1" checked>
+          <label class="lang-label lang-label--en" for="lang_change1">EN</label>
+        </div>
+        <div class="lang-btn">
+          <input type="radio" name="lang_change_btn_sp" id="lang_change2">
+          <label class="lang-label lang-label--cn" for="lang_change2">中文</label>
+        </div>
+      </div>
+      <div class="header-nav-btn">
+        <div class="header-nav-btn-inner">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </header>
+    <nav class="ly-header-nav-sp">
+      <ul class="header-nav-sp">
+        <li><a href="/">Home</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="./news.html">News</a></li>
+        <li><a href="./new_cars.html">New Cars</a></li>
+        <li><a href="">Used Cars</a></li>
+        <li><a href="">Live Auction</a></li>
+        <li><a href="./parts_services.html">Parts & Services</a></li>
+        <li><a href="">Links</a></li>
+      </ul>
+      <div class="header-nav-sp-item">
+        <a href="./contact.html" class="md-btn-white header-nav-sp-btn">Contact Us</a>
+      </div>
+    </nav>
+
+    <!-- PC用header -->
+    <header class="ly-header-pc">
+      <h1 class="header-logo">
+        <a href="/">
+          <img src="./assets/images/header_logo_mark.png" srcset="./assets/images/header_logo_mark@2x.png 2x" alt="logo: OFUKA INTERNATIONAL INC.">
+        </a>
+      </h1>
+      <nav class="ly-header-nav-pc">
+        <ul class="header-nav-pc">
+          <li><a href="/">Home</a></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="./news.html">News</a></li>
+          <li><a href="./new_cars.html">New Cars</a></li>
+          <li><a href="">Used Cars</a></li>
+          <li><a href="">Live Auction</a></li>
+          <li><a href="./parts_services.html">Parts & Services</a></li>
+          <li><a href="">Links</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="ly-header-pc-bg">
+      <!-- 乗算している帯用のdiv -->
+    </div>
+  </div>
+
+  <main class="">
+    
+    <div class="md-page-mv pg-news_bg">
+        <div class="md-page-title">
+        <h2>News</h2>
+    </div>
+    </div>
+
+    <div class="ly-section">
+        <ul class="md-breadcramb">
+          <li><a href="/">Home</a></li>
+          <li>News</li>
+        </ul>
+      </div>
+
+      <div class="pg-news ly-section">
+        <!-- <div class="pg-news_wrapper">
+          <div class="pg-news_contents"> -->
+        <!-- <div class="md-side-category">
+            <p class="md-side-category_title">Category</p>
+            <ul class="md-side-category_lists pg-side-category_lists j-center">
+                <li class="md-side-category_list active">
+                    <a href="">ALL</a>
+                </li>
+                <li class="md-side-category_list">
+                    <a href="">PRESS</a>
+                </li>
+                <li class="md-side-category_list">
+                    <a href="">notification</a>
+                </li>
+            </ul>
+      </div> -->
+
+      <div class="pg-news_content">
+
+      <div class="pg-news-cards">
+        <div class="pg-news-card">
+            <a href="">
+                <div class="pg-news-card_img">
+                    <img src="./assets/images/news/news-card01.jpg" alt="TOKYO AUTO SALON 2022">
+                </div>
+                <div class="pg-news-card_wrap">
+                  <time class="pg-news-card_date" datetime="2022-01-14">2022-01-14</time>
+                  <span class="pg-news-card_category">PRESS</span>
+              </div>
+                <p class="pg-news-card_title">TOKYO AUTO SALON 2022</p>
+            </a>
+        </div>
+        <div class="pg-news-card">
+            <a href="">
+                <div class="pg-news-card_img">
+                    <img src="./assets/images/news/news-card02.jpg" alt="TOKYO AUTO SALON TOYOTA GR & MODELISTA BOOTH">
+                </div>
+                <div class="pg-news-card_wrap">
+                  <time class="pg-news-card_date" datetime="2022-01-14">2022-01-14</time>
+                  <span class="pg-news-card_category">PRESS</span>
+              </div>
+                <p class="pg-news-card_title">TOKYO AUTO SALON TOYOTA GR & MODELISTA BOOTH</p>
+            </a>
+        </div>
+        <div class="pg-news-card">
+            <a href="">
+                <div class="pg-news-card_img">
+                    <img src="./assets/images/news/news-card03.jpg" alt="TOKYO AUTO SALON TOYOTA GR & MODELISTA BOOTH">
+                </div>
+                <div class="pg-news-card_wrap">
+                    <time class="pg-news-card_date" datetime="2022-01-14">2022-01-14</time>
+                    <span class="pg-news-card_category">PRESS</span>
+                </div>
+                <p class="pg-news-card_title">TOKYO AUTO SALON TOYOTA GR & MODELISTA BOOTH</p>
+            </a>
+        </div>
+        <div class="pg-news-card">
+            <a href="">
+                <div class="pg-news-card_img">
+                    <img src="./assets/images/news/news-card04.jpg" alt="TOKYO AUTO SALON TOYOTA GR & MODELISTA BOOTH">
+                </div>
+                <div class="pg-news-card_wrap">
+                    <time class="pg-news-card_date" datetime="2022-01-14">2022-01-14</time>
+                    <span class="pg-news-card_category">PRESS</span>
+                </div>
+                <p class="pg-news-card_title">TOKYO AUTO SALON TOYOTA GR & MODELISTA BOOTH</p>
+            </a>
+        </div>
+        <div class="pg-news-card">
+            <a href="">
+                <div class="pg-news-card_img">
+                    <img src="./assets/images/news/news-card05.jpg" alt="TOKYO AUTO SALON TOYOTA GR & MODELISTA BOOTH">
+                </div>
+                <div class="pg-news-card_wrap">
+                    <time class="pg-news-card_date" datetime="2022-01-14">2022-01-14</time>
+                    <span class="pg-news-card_category">PRESS</span>
+                </div>
+                <p class="pg-news-card_title">TOKYO AUTO SALON TOYOTA GR & MODELISTA BOOTH</p>
+            </a>
+        </div>
+        <div class="pg-news-card">
+            <a href="">
+                <div class="pg-news-card_img">
+                    <img src="./assets/images/news/news-card06.jpg" alt="TOKYO AUTO SALON TOYOTA GR & MODELISTA BOOTH">
+                </div>
+                <div class="pg-news-card_wrap">
+                    <time class="pg-news-card_date" datetime="2022-01-14">2022-01-14</time>
+                    <span class="pg-news-card_category">PRESS</span>
+                </div>
+                <p class="pg-news-card_title">TOKYO AUTO SALON TOYOTA GR & MODELISTA BOOTH</p>
+            </a>
+        </div>
+        <div class="pg-news-card">
+            <a href="">
+                <div class="pg-news-card_img">
+                    <img src="./assets/images/news/news-card07.jpg" alt="TOKYO AUTO SALON TOYOTA GR & MODELISTA BOOTH">
+                </div>
+                <div class="pg-news-card_wrap">
+                    <time class="pg-news-card_date" datetime="2022-01-14">2022-01-14</time>
+                    <span class="pg-news-card_category">PRESS</span>
+                </div>
+                <p class="pg-news-card_title">TOKYO AUTO SALON TOYOTA GR & MODELISTA BOOTH</p>
+            </a>
+        </div>
+        <div class="pg-news-card">
+            <a href="">
+                <div class="pg-news-card_img">
+                    <img src="./assets/images/news/news-card08.jpg" alt="NEW VOXY DEBUT!!!">
+                </div>
+                <div class="pg-news-card_wrap">
+                    <time class="pg-news-card_date" datetime="2022-01-14">2022-01-14</time>
+                    <span class="pg-news-card_category">PRESS</span>
+                </div>
+                <p class="pg-news-card_title">NEW VOXY DEBUT!!!</p>
+            </a>
+        </div>
+      </div>
+
+      <div class="pagination pg-news-pagination">
+        <ul class="pagination_lists pg-news-pagination_lists">
+            <li class="pagination_list pg-news-pagination_list active">
+                <a href="">1</a>
+            </li>
+            <li class="pagination_list pg-news-pagination_list">
+                <a href="">2</a>
+            </li>
+            <li class="pagination_list pg-news-pagination_list">
+                <a href="">3</a>
+            </li>
+            <li class="pagination_list pg-news-pagination_list">
+                <a href="">NEXT</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+                  
+    <!-- </div>
+  </div> -->
+
+    </div>
+
+    <section class="ly-section">
+        <div class="pg-news-cta">
+          <div class="pg-news-cta_content">
+            <h2 class="pg-news-cta_title">Get in touch with us anytime</h2>
+            <div class="pg-news-cta_btns">
+                <a href="./new_cars.html" class="md-btn pg-news-cta_btn">SEARCH CARS</a>
+                <a href="./contact.html" class="md-btn pg-news-cta_btn">CONTACT</a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="ly-footer">
+    <div class="ly-footer-inner">
+      <div class="ly-footer-item ly-footer-item--link">
+        <ul class="footer-link">
+          <li><a href="">Terms of Use</a></li>
+          <li><a href="">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="ly-footer-item ly-footer-item--contact">
+        <a class="md-btn footer-btn" href="">Contact Us</a>
+      </div>
+      <div class="ly-footer-item ly-footer-item--logo">
+        <img src="./assets/images/footer_logo.png" srcset="./assets/images/footer_logo@2x.png 2x" alt="LOGO: OFUKA INTERNATIONAL INC.">
+      </div>
+      <div class="ly-footer-item ly-footer-item--copy">
+        <span class="copylight">© 2023 All right reserved. Ofuka Intemational Inc.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS(スクリプト) -->
+  <script src="./assets/js/base.js"></script>
+</body>
+
+</html>

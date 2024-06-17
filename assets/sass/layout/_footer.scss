@@ -1,0 +1,117 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// footer
+// 
+// footerに関しては、レイアウト用以外の装飾に関するスタイルも
+// ここに記述しています。
+// -----------------------------------------------------------------
+.ly-footer {
+  @include font-rem(14);
+
+  padding-top: 50px;
+  padding-bottom: 30px;
+  background-image: url('../images/wave_bg_sm@2x.png'),
+                    linear-gradient(90deg, rgb(255 147 0 / 50%), rgb(227 147 117 / 50%));
+  background-repeat: no-repeat, no-repeat;
+  background-position: top 50% left 50%, top 0 left 0;
+  background-size: cover;
+  background-blend-mode: overlay;
+
+  @media #{$mq-sm} {
+    padding-top: 60px;
+    padding-bottom: 70px;
+    background-image: url('../images/wave_bg_lg@2x.png'),
+                      linear-gradient(90deg, rgb(255 147 0 / 50%), rgb(227 147 117 / 50%));
+    background-size: 140%, cover;
+  }
+}
+
+.ly-footer-inner {
+  display: grid;
+  max-width: 1000px;
+  margin-inline: auto;
+
+  @media #{$mq-md} {
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr max-content;
+  }
+}
+
+.ly-footer-item--link {
+  text-align: center;
+
+  @media #{$mq-md} {
+    text-align: left;
+  }
+}
+
+.ly-footer-item--contact {
+  margin-top: 60px;
+  margin-bottom: 90px;
+  text-align: center;
+
+  @media #{$mq-md} {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+}
+
+.ly-footer-item--logo {
+  text-align: center;
+
+  @media #{$mq-md} {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    align-self: end;
+    line-height: 0; /* align-selfをあわせる用 */
+  }
+}
+
+.ly-footer-item--copy {
+  margin-top: 10px;
+  text-align: center;
+
+  @media #{$mq-md} {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    margin-top: 0;
+    text-align: left;
+  }
+}
+
+// -----------------------------------------------------------------
+// footer内のモジュール
+// -----------------------------------------------------------------
+.footer-link {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+
+  li + li {
+    margin-top: 18px;
+  }
+}
+
+.footer-btn {
+  position: relative;
+  width: 240px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    display: inline-block;
+    width: 6px;
+    height: 9px;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    content: '';
+    background-color: #fff;
+    transform: translateY(-50%);
+  }
+}

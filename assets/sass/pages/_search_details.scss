@@ -1,0 +1,696 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// search_details
+// -----------------------------------------------------------------
+// レイアウト
+.pg-details-body {
+  margin-bottom: 90px;
+
+  @media #{$mq-md} {
+    display: grid;
+    grid-template-columns: 566px 1fr;
+    gap: 25px;
+    max-width: 1000px;
+    margin-inline: auto;
+    margin-bottom: 130px;
+  }
+
+  .pg-details-names {
+    margin-top: 20px;
+
+    @media #{$mq-md} {
+      margin-top: 0;
+    }
+  }
+
+  .pg-details-date {
+    margin-top: 20px;
+
+    @media #{$mq-md} {
+      margin-top: 40px;
+    }
+  }
+
+  .pg-details-options {
+    margin-top: 25px;
+
+    @media #{$mq-md} {
+      margin-top: 35px;
+    }
+  }
+
+  .pg-details-step {
+    margin-top: 25px;
+
+    @media #{$mq-md} {
+      margin-top: 20px;
+    }
+  }
+
+  .pg-details-step1-prices {
+    margin-top: 25px;
+  }
+}
+
+// -----------------------------------------------------------------
+// サムネイル付きスライダー
+// -----------------------------------------------------------------
+.pg-details-photo-slider {
+  display: block;
+  max-width: 566px; /* 横幅を指定しないとスライダーがバグる */
+  margin-inline: -15px;
+
+  @media #{$mq-md} {
+    margin-inline: 0;
+  }
+}
+
+.pg-details-photo-slider-main {
+
+  .slick-arrow {
+    z-index: 1;
+  }
+
+  .md-gallery-slider-main-item {
+    position: relative;
+
+    .label-recommend {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: inline-block;
+      padding-inline: 5px;
+      font-weight: bold;
+      line-height: 23px;
+      color: #fff;
+      background: rgb(235,143,50);
+      background: linear-gradient(180deg, rgba(235,143,50,1) 0%, rgba(239,203,124,1) 50%, rgba(193,89,25,1) 100%);
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: -18px;
+        display: block;
+        width: 18px;
+        height: 23px;
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+        content: '';
+        background: rgb(235,143,50);
+        background: linear-gradient(180deg, rgba(235,143,50,1) 0%, rgba(239,203,124,1) 50%, rgba(193,89,25,1) 100%);
+      }
+    }
+  }
+}
+
+  .md-gallery-slider-main-item_img {
+    max-height: 280px;
+    width: 100%;
+    height: 100%;
+    @media #{$mq-md} {
+      max-width: 566px;
+      max-height: 393px;
+    }
+    img {
+        width: 100%;
+    }
+  }
+
+.pg-details-photo-slider-sub {
+  margin-inline: 20px;
+  margin-top: 10px;
+
+  @media #{$mq-md} {
+    margin-inline: 0;
+    margin-top: 15px;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .md-gallery-slider-sub-item {
+    margin-inline: 5px;
+  
+    @media #{$mq-md} {
+      margin-inline: 0;
+    }
+  }
+}
+
+// -----------------------------------------------------------------
+// 名前・金額
+// -----------------------------------------------------------------
+.pg-details-names {
+  padding-bottom: 10px;
+  line-height: 1.3;
+  border-bottom: 1px solid $orange1;
+
+  @media #{$mq-md} {
+    padding-bottom: 25px;
+  }
+
+  .name {
+    font-weight: bold;
+    color: $blue;
+    text-decoration: underline;
+  }
+
+  .price {
+    margin-top: 10px;
+    font-weight: bold;
+    color: $orange1;
+
+    @include font-rem(25);
+
+    @media #{$mq-md} {
+      margin-top: 15px;
+    }
+  }
+}
+
+.pg-details-names--sp {
+  @media #{$mq-md} {
+    display: none;
+  }
+}
+
+.pg-details-names--pc {
+  display: none;
+
+  @media #{$mq-md} {
+    display: block;
+  }
+}
+
+.pg-details-names-list {
+  padding: 0;
+  margin: 10px 0 0;
+  list-style-type: none;
+
+  @include font-rem(14);
+
+  li {
+    display: inline;
+
+    @media #{$mq-md} {
+      display: block;
+    }
+  }
+
+  li + li::before {
+    margin-inline: 3px;
+    content: '/';
+
+    @media #{$mq-md} {
+      display: none;
+    }
+  }
+}
+
+// -----------------------------------------------------------------
+// 基本データ
+// -----------------------------------------------------------------
+.pg-details-date-base {
+  display: grid;
+  gap: 8px;
+
+  @media #{$mq-md} {
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 30px;
+    border-top: 1px solid $border;
+  }
+}
+
+.pg-details-date-base-item {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  gap: 10px;
+
+  @media #{$mq-md} {
+    grid-template-columns: auto;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .label {
+    color: $gray;
+
+    @include font-rem(14);
+  }
+
+  .date {
+    font-weight: bold;
+    color: $orange1;
+
+    @include font-rem(18);
+  }
+}
+
+.pg-details-date-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+  border-collapse: collapse;
+
+  @media #{$mq-md} {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 30px;
+  }
+
+  .pg-details-date-table-label,
+  .pg-details-date-table-cont {
+    display: grid;
+    place-items: center;
+    padding: 5px;
+    margin-right: -1px;   /* borderの重なり防止 */
+    margin-bottom: -1px;  /* borderの重なり防止 */
+    line-height: 1.3;
+    text-align: center;
+    border: 1px solid $border;
+
+    @include font-rem(14);
+
+    @media #{$mq-md} {
+      @include font-rem(16);
+
+      min-height: 52px;
+    }
+
+    .txt-sm {
+      font-size: 85.71%;
+    }
+
+    br {
+      display: none;
+
+      @media #{$mq-md} {
+        display: inline;
+      }
+    }
+  }
+
+  .pg-details-date-table-label {
+    background-color: $tableTh;
+  }
+}
+
+// -----------------------------------------------------------------
+// オプション
+// -----------------------------------------------------------------
+.pg-details-options {
+  padding-bottom: 20px;
+  border-bottom: 1px solid $orange1;
+
+  @media #{$mq-md} {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.pg-details-option-list {
+  gap: 5px;
+  margin-top: 20px;
+
+  @media #{$mq-md} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  li {
+    @include font-rem(12);
+
+    @media #{$mq-md} {
+      @include font-rem(16);
+    }
+  }
+}
+
+// -----------------------------------------------------------------
+// STEP共通
+// -----------------------------------------------------------------
+
+.pg-details-step-head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+
+  .label {
+    padding-inline: 7px;
+    font-weight: bold;
+    color: #fff;
+    background-color: $orange1;
+
+    @include font-rem(14);
+  }
+
+  .ttl {
+    font-weight: bold;
+    border-left: 1px solid $orange1;
+    padding-left: 20px;
+  }
+
+  .sub {
+    color: $blue;
+
+    @include font-rem(11);
+  }
+}
+
+// -----------------------------------------------------------------
+// STEP1
+// -----------------------------------------------------------------
+.pg-details-step1 {
+  padding-bottom: 30px;
+  border-bottom: 1px solid $orange1;
+
+  @media #{$mq-md} {
+    padding-bottom: 35px;
+  }
+}
+
+.pg-details-step1-items {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+  line-height: 1.3;
+
+  @include font-rem(14);
+
+  &.pg-details-step1-items--txt {
+    align-items: start;
+  }
+}
+
+.pg-details-step1-items-cont {
+  .city {
+    display: block;
+    font-weight: 500;
+  }
+
+  .cf {
+    display: block;
+    color: $blue;
+  }
+}
+
+// toggle
+.pg-details-step1-toggle-wrap {
+  margin-top: 15px;
+
+  @include font-rem(14);
+}
+
+.pg-details-step1-toggle-ttl {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid $border;
+
+  // 三角形
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    display: block;
+    width: 10px;
+    height: 6px;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    content: '';
+    background-color: #000;
+    transform: translateY(-50%);
+
+    @include transition;
+  }
+
+  &.is-open::after {
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  }
+}
+
+.pg-details-step1-toggle {
+  display: none;
+  padding: 7px;
+  border-color: $border;
+  border-style: solid;
+  border-width: 0 1px 1px;
+}
+
+.pg-details-step1-ships {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 0 7px 5px;
+  margin-inline: -7px;
+  border-bottom: 1px solid $border;
+
+  .ttl {
+    flex-basis: 40%;
+  }
+}
+
+.pg-details-step1-ports {
+  .ttl {
+    padding-block: 7px;
+    border-bottom: 1px solid #E2E2E2;
+  }
+
+  & + & {
+    padding-top: 10px;
+    border-top: 1px solid #E2E2E2;
+  }
+}
+
+.pg-details-step1-ports-item {
+  display: grid;
+  grid-template-columns: 42% auto 1fr;
+  gap: 5px;
+  align-items: center;
+  padding: 2px 7px;
+  margin-inline: -7px;
+
+  &.is-select {
+    background-color: #FAFAFA;
+  }
+
+  .md-radio-label {
+    font-weight: 500;
+  }
+
+  .txt {
+    color: $blue;
+
+    @include font-rem(11);
+  }
+
+  .price {
+    font-weight: 500;
+    text-align: right;
+  }
+}
+
+// Additional Options
+.pg-details-step1-check {
+  margin-top: 25px;
+
+  @include font-rem(14);
+
+  a {
+    color: $blue;
+  }
+}
+
+.pg-details-step1-check-ttl {
+  margin-bottom: 10px;
+}
+
+.pg-details-step1-check-items {
+  margin-top: 5px;
+
+  .md-checkbox {
+    display: inline-block;
+  }
+}
+
+.pg-details-step1-check-items-txt {
+  margin-top: 7px;
+  margin-left: calc(1em + 5px);   /* チェックボックスとmargin分の余白 */
+}
+
+
+// 金額
+.pg-details-step1-prices {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  border-top: 1px solid $border;
+
+  @include font-rem(16);
+}
+
+.pg-details-step1-prices-label {
+  font-weight: bold;
+}
+
+.pg-details-step1-prices-unit {
+  .cif {
+    font-weight: bold;
+  }
+
+  .ask {
+    font-weight: bold;
+    color: $blue;
+  }
+}
+
+// -----------------------------------------------------------------
+// STEP2
+// -----------------------------------------------------------------
+// フォーム
+.pg-details-step2-form-wrap {
+  display: grid;
+  gap: 20px;
+  margin-top: 20px;
+
+  @media #{$mq-md} {
+    gap: 15px;
+    padding-inline: 30px;
+    margin-top: 30px;
+  }
+}
+
+.pg-details-step2-form-label {
+  margin-bottom: 5px;
+
+  @include font-rem(14);
+
+  sup {
+    color: $blue;
+  }
+}
+
+// ボタン
+.pg-details-step-btn-wrap {
+  margin-top: 35px;
+}
+
+.pg-details-step-btn {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+
+  @media #{$mq-md} {
+    margin-top: 20px;
+  }
+}
+
+.pg-details-step-btn--mail {
+  padding-block: 18px;
+}
+
+.pg-details-step-btn--whatsapp {
+  padding-block: 9px;
+  background-color: #fff;
+  border: 1px solid #25D366;
+
+  &:hover {
+    background-color: darken(#fff, 5%);
+  }
+}
+
+// -----------------------------------------------------------------
+// SP用フッター0固定ボタン
+// -----------------------------------------------------------------
+.pg-details-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.pg-details-footer-btn-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.pg-details-footer-btn {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgb(0 0 0 / 15%);
+
+  @include transition;
+
+  @media #{$mq-md} {
+    display: none;
+  }
+
+  &.pg-details-footer-btn--whatsapp {
+    border: 1px solid #25D366;
+  }
+
+  &.pg-details-footer-btn--mail {
+    color: #fff;
+    background-color: $orange1;
+
+    &:hover {
+      background-color: darken($orange1, 5%);
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+    background-color: darken(#fff, 5%);
+  }
+}
+
+// -----------------------------------------------------------------
+// 関連slider
+// -----------------------------------------------------------------
+.pg-details-related {
+  position: relative;
+  padding-top: 35px;
+  padding-bottom: 55px;
+
+  @media #{$mq-md} {
+    padding-top: 0;
+    padding-bottom: 130px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: 100vw;
+    height: 2px;
+    content: '';
+    background-color: $orange1;
+    transform: translateX(-50%);
+
+    @media #{$mq-md} {
+      display: none;
+    }
+  }
+}
+
+.pg-details-related-slider {
+  margin-top: 15px;
+
+  @media #{$mq-md} {
+    margin-top: 40px;
+  }
+}

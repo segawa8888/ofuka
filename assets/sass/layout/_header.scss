@@ -1,0 +1,217 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// header
+// 
+// headerに関しては、レイアウト用以外の装飾に関するスタイルも
+// ここに記述しています。
+// -----------------------------------------------------------------
+// header共通
+// -----------------------------------------------------------------
+.header-logo {
+  display: inline-block;
+  font-size: inherit; /* ロゴ画像をfitさせる */
+}
+
+// -----------------------------------------------------------------
+// SP用header
+// -----------------------------------------------------------------
+.ly-header-sp {
+  position: fixed;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  height: 47px;
+  background-color: #fff;
+
+  @media #{$mq-md} {
+    display: none;
+  }
+
+  .header-logo {
+    margin-left: 15px;
+  }
+}
+
+// SPナビ用のボタン
+.header-nav-btn {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 100%;
+  background-color: $orange1;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.header-nav-btn-inner {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 1.5px;
+
+  span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+
+    @include transition;
+  
+    &:nth-child(2) {
+      transform: translateY(-7.5px) rotate(0deg);
+    }
+  
+    &:nth-child(3) {
+      transform: translateY(7.5px) rotate(0deg);
+    }
+  }
+}
+
+.header-nav-btn.is-open {
+  .header-nav-btn-inner {
+    span {
+      &:nth-child(1) {
+        opacity: 0;
+      }
+  
+      &:nth-child(2) {
+        transform: translateY(0) rotate(45deg);
+      }
+  
+      &:nth-child(3) {
+        transform: translateY(0) rotate(-45deg);
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------
+// SP用nav
+// -----------------------------------------------------------------
+.ly-header-nav-sp {
+  position: fixed;
+  top: 47px;
+  z-index: 5;
+  width: 100%;
+  visibility: hidden;
+  background-image: linear-gradient(135deg, #FFCE00, #FF9300, #E39375, #E37950);
+  opacity: 0;
+  transition: all .3s ease-in-out;
+
+  /* 誤作動防止の念のため、PCでは消す */
+  @media #{$mq-md} {
+    display: none;
+  }
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.header-nav-sp {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  li {
+    line-height: 1;
+    text-align: center;
+    border-bottom: 1px solid #FFCE00;
+  }
+
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-block: 20px;
+
+    @include transition;
+
+    &:hover {
+      text-decoration: none;
+      background-color: rgb(0 0 0 / 10%);
+    }
+  }
+}
+
+.header-nav-sp-item {
+  margin-block: 35px;
+  text-align: center;
+}
+
+.header-nav-sp-btn {
+  padding-inline: 70px;
+  font-weight: bolder;
+}
+
+// -----------------------------------------------------------------
+// PC用header
+// -----------------------------------------------------------------
+.ly-header-pc {
+  display: none;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 45px;
+  padding-top: 11px;
+  padding-bottom: 5px;
+
+  @media #{$mq-md} {
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+  }
+
+  .header-logo {
+    width: 26.93vw;
+    max-width: 404px;
+  }
+}
+
+// 乗算用帯
+.ly-header-pc-bg {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: none;
+  width: 100%;
+  height: 72px;
+  background-color: #C15919;
+  mix-blend-mode: multiply;
+
+  @media #{$mq-md} {
+    display: block;
+  }
+}
+
+.header-nav-pc {
+  position: relative;
+  top: -5px;  /* ロゴにシャドウがある分の微調整 */
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  a {
+    @include transition;
+
+    color: #fff;
+    text-shadow: 0 3px 6px rgb(0 0 0 / 15%);
+    
+    &:hover {
+      color: rgb(255 255 255 / 75%);
+      text-decoration: none;
+    }
+  }
+}

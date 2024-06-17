@@ -1,0 +1,33 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// パンくずリスト
+// -----------------------------------------------------------------
+.md-breadcramb {
+  display: flex;
+  padding: 0;
+  margin: 10px 0 30px;
+  list-style-type: none;
+
+  @include font-rem(12);
+
+  @media #{$mq-md} {
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    @include font-rem(13);
+  }
+
+  li + li::before {
+    margin-inline: 5px;
+    content: '/';
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

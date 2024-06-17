@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>Document</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/modern-reset.css">
+  <link rel="stylesheet" href="./assets/css/slick/slick-theme.css">
+  <link rel="stylesheet" href="./assets/css/slick/slick.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <!-- JS(ライブラリ) -->
+  <script src="./assets/js/jquery-3.7.0.min.js"></script>
+  <script src="./assets/js/slick.min.js"></script>
+</head>
+
+<body>
+  
+  <div class="ly-header">
+    <!-- SP用header -->
+    <header class="ly-header-sp">
+      <h1 class="header-logo">
+        <a href="/">
+          <img src="./assets/images/header_logo_black.svg" alt="logo: OFUKA INTERNATIONAL INC.">
+        </a>
+      </h1>
+      <div class="md-lang-btn">
+        <div class="lang-btn">
+          <input type="radio" name="lang_change_btn_sp" id="lang_change1" checked>
+          <label class="lang-label lang-label--en" for="lang_change1">EN</label>
+        </div>
+        <div class="lang-btn">
+          <input type="radio" name="lang_change_btn_sp" id="lang_change2">
+          <label class="lang-label lang-label--cn" for="lang_change2">中文</label>
+        </div>
+      </div>
+      <div class="header-nav-btn">
+        <div class="header-nav-btn-inner">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </header>
+    <nav class="ly-header-nav-sp">
+      <ul class="header-nav-sp">
+        <li><a href="/">Home</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="./news.html">News</a></li>
+        <li><a href="./new_cars.html">New Cars</a></li>
+        <li><a href="">Used Cars</a></li>
+        <li><a href="">Live Auction</a></li>
+        <li><a href="./parts_services.html">Parts & Services</a></li>
+        <li><a href="">Links</a></li>
+      </ul>
+      <div class="header-nav-sp-item">
+        <a href="./contact.html" class="md-btn-white header-nav-sp-btn">Contact Us</a>
+      </div>
+    </nav>
+
+    <!-- PC用header -->
+    <header class="ly-header-pc">
+      <h1 class="header-logo">
+        <a href="/">
+          <img src="./assets/images/header_logo_mark.png" srcset="./assets/images/header_logo_mark@2x.png 2x" alt="logo: OFUKA INTERNATIONAL INC.">
+        </a>
+      </h1>
+      <nav class="ly-header-nav-pc">
+        <ul class="header-nav-pc">
+          <li><a href="/">Home</a></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="./news.html">News</a></li>
+          <li><a href="./new_cars.html">New Cars</a></li>
+          <li><a href="">Used Cars</a></li>
+          <li><a href="">Live Auction</a></li>
+          <li><a href="./parts_services.html">Parts & Services</a></li>
+          <li><a href="">Links</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="ly-header-pc-bg">
+      <!-- 乗算している帯用のdiv -->
+    </div>
+  </div>
+
+  <main class="">
+    <section class="pg-kv">
+      <video id="video1" class="pg-kv-video" autoplay muted playsinline>
+        <source src="./assets/video/pg-kv-video1.mov" type="video/mp4">
+      </video>
+      <video id="video2" class="pg-kv-video" muted playsinline style="display: none;">
+        <source src="./assets/video/pg-kv-video2.mov" type="video/mp4">
+      </video>
+      <video id="video3" class="pg-kv-video" muted playsinline style="display: none;">
+        <source src="./assets/video/pg-kv-video3.mov" type="video/mp4">
+      </video>
+      <video id="video4" class="pg-kv-video" muted playsinline style="display: none;">
+        <source src="./assets/video/pg-kv-video4.mov" type="video/mp4">
+      </video>
+
+      <div class="pg-kv-txt">
+        This is the site where you can get new<br>
+        and used car information<br>
+        and auction results.<br><br>
+        We are waiting for orders!
+      </div>
+
+      <div class="md-lang-btn">
+        <div class="lang-btn">
+          <input type="radio" name="lang_change_btn_pc" id="lang_change3" checked>
+          <label class="lang-label lang-label--en" for="lang_change3">EN</label>
+        </div>
+        <div class="lang-btn">
+          <input type="radio" name="lang_change_btn_pc" id="lang_change4">
+          <label class="lang-label lang-label--cn" for="lang_change4">中文</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="ly-section pg-front-recom">
+      <h2 class="md-ttl1">RECOMMEND</h2>
+      <ul class="pg-front-recom-tab">
+        <li class="front-recom-tab front-recom-tab--new js-active">NEW CAR</li>
+        <li class="front-recom-tab front-recom-tab--used">USED CAR</li>
+      </ul>
+
+      <div class="pg-front-recom-tab-cont">
+        <!-- NEW -->
+        <div class="front-recom-tab-cont-wrap front-recom-tab-cont-wrap--new js-active">
+          <div class="front-recom-tab-cont">
+            <div class="md-recom-slider pg-front-recom-slider">
+              <!-- layoutの都合上4枚で1枚のスライドにする -->
+              <div class="md-recom-slider-item">
+                <div class="md-recom-slider-item-inner">
+                  <div class="md-recom-card">
+                    <a href="./search_details.html">
+                      <figure class="md-recom-card-img">
+                        <span class="label-recommend">RECOMMEND</span>
+                        <img src="./assets/images/slider_sample01.jpg" alt="">
+                      </figure>
+                      <div class="md-recom-card-body">
+                        <div class="price">¥ 5,400,000.00</div>
+                        <ul class="list">
+                          <li class="maker">TOYOTA</li>
+                          <li class="model">ALPHARD</li>
+                        </ul>
+                        <div class="detail">2019 ALPHARD 3.5 SC BLACK</div>
+                      </div>
+                    </a>
+                  </div>
+                  
+                  <div class="md-recom-card">
+                    <a href="./search_details.html">
+                      <figure class="md-recom-card-img">
+                        <span class="label-recommend">RECOMMEND</span>
+                        <img src="./assets/images/slider_sample02.jpg" alt="">
+                      </figure>
+                      <div class="md-recom-card-body">
+                        <div class="price">¥ 5,400,000.00</div>
+                        <ul class="list">
+                          <li class="maker">TOYOTA</li>
+                          <li class="model">VELLFIRE</li>
+                        </ul>
+                        <div class="detail">2018 Vellfire 3.5 ZG Black (202)</div>
+                      </div>
+                    </a>
+                  </div>
+          
+                  <div class="md-recom-card">
+                    <a href="./search_details.html">
+                      <figure class="md-recom-card-img">
+                        <span class="label-recommend">RECOMMEND</span>
+                        <img src="./assets/images/slider_sample03.jpg" alt="">
+                      </figure>
+                      <div class="md-recom-card-body">
+                        <div class="price">¥ 5,650,000.00</div>
+                        <ul class="list">
+                          <li class="maker">TOYOTA</li>
+                          <li class="model">ALPHARD</li>
+                        </ul>
+                        <div class="detail">2019 ALPHARD 3.5 SC BLACK</div>
+                      </div>
+                    </a>
+                  </div>
+          
+                  <div class="md-recom-card">
+                    <a href="./search_details.html">
+                      <figure class="md-recom-card-img">
+                        <span class="label-recommend">RECOMMEND</span>
+                        <img src="./assets/images/slider_sample04.jpg" alt="">
+                      </figure>
+                      <div class="md-recom-card-body">
+                        <div class="price">¥ 5,700,000.00</div>
+                        <ul class="list">
+                          <li class="maker">TOYOTA</li>
+                          <li class="model">ALPHARD</li>
+                        </ul>
+                        <div class="detail">2019 ALPHARD 3.5 SC BLACK</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="md-recom-slider-item">
+                <div class="md-recom-slider-item-inner">
+                  <div class="md-recom-card">
+                    <a href="">
+                      <figure class="md-recom-card-img">
+                        <img src="./assets/images/slider_sample01.jpg" alt="">
+                      </figure>
+                      <div class="md-recom-card-body">
+                        <div class="price">¥ 5,400,000.00</div>
+                        <ul class="list">
+                          <li class="maker">TOYOTA</li>
+                          <li class="model">ALPHARD</li>
+                        </ul>
+                        <div class="detail">2019 ALPHARD 3.5 SC BLACK</div>
+                      </div>
+                    </a>
+                  </div>
+                  
+                  <div class="md-recom-card">
+                    <a href="">
+                      <figure class="md-recom-card-img">
+                        <img src="./assets/images/slider_sample02.jpg" alt="">
+                      </figure>
+                      <div class="md-recom-card-body">
+                        <div class="price">¥ 5,400,000.00</div>
+                        <ul class="list">
+                          <li class="maker">TOYOTA</li>
+                          <li class="model">VELLFIRE</li>
+                        </ul>
+                        <div class="detail">2018 Vellfire 3.5 ZG Black (202)</div>
+                      </div>
+                    </a>
+                  </div>
+          
+                  <div class="md-recom-card">
+                    <a href="">
+                      <figure class="md-recom-card-img">
+                        <img src="./assets/images/slider_sample03.jpg" alt="">
+                      </figure>
+                      <div class="md-recom-card-body">
+                        <div class="price">¥ 5,650,000.00</div>
+                        <ul class="list">
+                          <li class="maker">TOYOTA</li>
+                          <li class="model">ALPHARD</li>
+                        </ul>
+                        <div class="detail">2019 ALPHARD 3.5 SC BLACK</div>
+                      </div>
+                    </a>
+                  </div>
+          
+                  <div class="md-recom-card">
+                    <a href="">
+                      <figure class="md-recom-card-img">
+                        <img src="./assets/images/slider_sample04.jpg" alt="">
+                      </figure>
+                      <div class="md-recom-card-body">
+                        <div class="price">¥ 5,700,000.00</div>
+                        <ul class="list">
+                          <li class="maker">TOYOTA</li>
+                          <li class="model">ALPHARD</li>
+                        </ul>
+                        <div class="detail">2019 ALPHARD 3.5 SC BLACK</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="pg-front-recom-btn-wrap">
+              <a href="" class="md-btn front-recom-btn">More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- USED -->
+        <div class="front-recom-tab-cont-wrap front-recom-tab-cont-wrap--used">
+          <div class="front-recom-tab-cont">
+            <div class="md-recom-slider pg-front-recom-slider">
+              <!-- layoutの都合上4枚で1枚のスライドにする -->
+              <div class="md-recom-slider-item">
+                <div class="md-recom-slider-item-inner">
+                  <div class="md-recom-card">
+                    <figure class="md-recom-card-img">
+                      <img src="https://picsum.photos/200/300" alt="">
+                    </figure>
+                    <div class="md-recom-card-body">
+                      <div class="price">¥ 5,400,000.00</div>
+                      <ul class="list">
+                        <li class="maker">TOYOTA</li>
+                        <li class="model">ALPHARD</li>
+                      </ul>
+                      <div class="detail">2019 ALPHARD 3.5 SC BLACK</div>
+                    </div>
+                  </div>
+                  
+                  <div class="md-recom-card">
+                    <figure class="md-recom-card-img">
+                      <img src="https://picsum.photos/210/300" alt="">
+                    </figure>
+                    <div class="md-recom-card-body">
+                      <div class="price">¥ 5,400,000.00</div>
+                      <ul class="list">
+                        <li class="maker">TOYOTA</li>
+                        <li class="model">VELLFIRE</li>
+                      </ul>
+                      <div class="detail">2018 Vellfire 3.5 ZG Black (202)</div>
+                    </div>
+                  </div>
+          
+                  <div class="md-recom-card">
+                    <figure class="md-recom-card-img">
+                      <img src="https://picsum.photos/220/300" alt="">
+                    </figure>
+                    <div class="md-recom-card-body">
+                      <div class="price">¥ 5,650,000.00</div>
+                      <ul class="list">
+                        <li class="maker">TOYOTA</li>
+                        <li class="model">ALPHARD</li>
+                      </ul>
+                      <div class="detail">2019 ALPHARD 3.5 SC BLACK</div>
+                    </div>
+                  </div>
+          
+                  <div class="md-recom-card">
+                    <figure class="md-recom-card-img">
+                      <img src="https://picsum.photos/250/300" alt="">
+                    </figure>
+                    <div class="md-recom-card-body">
+                      <div class="price">¥ 5,700,000.00</div>
+                      <ul class="list">
+                        <li class="maker">TOYOTA</li>
+                        <li class="model">ALPHARD</li>
+                      </ul>
+                      <div class="detail">2019 ALPHARD 3.5 SC BLACK</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="md-recom-slider-item">
+                <div class="md-recom-slider-item-inner">
+                  <div class="md-recom-card">
+                    <figure class="md-recom-card-img">
+                      <img src="./assets/images/slider_sample01.jpg" alt="">
+                    </figure>
+                    <div class="md-recom-card-body">
+                      <div class="price">¥ 5,400,000.00</div>
+                      <ul class="list">
+                        <li class="maker">TOYOTA</li>
+                        <li class="model">ALPHARD</li>
+                      </ul>
+                      <div class="detail">2019 ALPHARD 3.5 SC BLACK</div>
+                    </div>
+                  </div>
+                  
+                  <div class="md-recom-card">
+                    <figure class="md-recom-card-img">
+                      <img src="./assets/images/slider_sample02.jpg" alt="">
+                    </figure>
+                    <div class="md-recom-card-body">
+                      <div class="price">¥ 5,400,000.00</div>
+                      <ul class="list">
+                        <li class="maker">TOYOTA</li>
+                        <li class="model">VELLFIRE</li>
+                      </ul>
+                      <div class="detail">2018 Vellfire 3.5 ZG Black (202)</div>
+                    </div>
+                  </div>
+          
+                  <div class="md-recom-card">
+                    <figure class="md-recom-card-img">
+                      <img src="./assets/images/slider_sample03.jpg" alt="">
+                    </figure>
+                    <div class="md-recom-card-body">
+                      <div class="price">¥ 5,650,000.00</div>
+                      <ul class="list">
+                        <li class="maker">TOYOTA</li>
+                        <li class="model">ALPHARD</li>
+                      </ul>
+                      <div class="detail">2019 ALPHARD 3.5 SC BLACK</div>
+                    </div>
+                  </div>
+          
+                  <div class="md-recom-card">
+                    <figure class="md-recom-card-img">
+                      <img src="./assets/images/slider_sample04.jpg" alt="">
+                    </figure>
+                    <div class="md-recom-card-body">
+                      <div class="price">¥ 5,700,000.00</div>
+                      <ul class="list">
+                        <li class="maker">TOYOTA</li>
+                        <li class="model">ALPHARD</li>
+                      </ul>
+                      <div class="detail">2019 ALPHARD 3.5 SC BLACK</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="pg-front-recom-btn-wrap">
+              <a href="" class="md-btn front-recom-btn">More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pg-carlogo">
+      <div class="pg-carlogo-slider js-carlogo-slider">
+        <figure class="carlogo">
+          <img src="./assets/images/car_logo/toyota.png" alt="logo:TOYOTA">
+          <figcaption>TOYOTA</figcaption>
+        </figure>
+        <figure class="carlogo">
+          <img src="./assets/images/car_logo/nissan.png" alt="logo:NISSAN">
+          <figcaption>NISSAN</figcaption>
+        </figure>
+        <figure class="carlogo">
+          <img src="./assets/images/car_logo/bmw.png" alt="logo:BMW">
+          <figcaption>BMW</figcaption>
+        </figure>
+        <figure class="carlogo">
+          <img src="./assets/images/car_logo/subaru.png" alt="logo:SUBARU">
+          <figcaption>SUBARU</figcaption>
+        </figure>
+        <figure class="carlogo">
+          <img src="./assets/images/car_logo/acura.png" alt="logo:ACURA">
+          <figcaption>ACURA</figcaption>
+        </figure>
+        <figure class="carlogo">
+          <img src="./assets/images/car_logo/mercedes.png" alt="logo:Mercedes">
+          <figcaption>Mercedes</figcaption>
+        </figure>
+        <figure class="carlogo">
+          <img src="./assets/images/car_logo/mazda.png" alt="logo:MAZDA">
+          <figcaption>MAZDA</figcaption>
+        </figure>
+        <figure class="carlogo">
+          <img src="./assets/images/car_logo/lexus.png" alt="logo:LEXUS">
+          <figcaption>LEXUS</figcaption>
+        </figure>
+        <figure class="carlogo">
+          <img src="./assets/images/car_logo/bentley.png" alt="logo:Bentley">
+          <figcaption>Bentley</figcaption>
+        </figure>
+        <figure class="carlogo">
+          <img src="./assets/images/car_logo/honda.png" alt="logo:HONDA">
+          <figcaption>HONDA</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="pg-front-search">
+      <div class="ly-section pg-front-search-inner">
+        <div class="pg-front-search-item pg-front-search-item--txt">
+          <h2 class="pg-front-search-ttl">SEARCH CARS</h2>
+          <p>Looking for Japanese exported cars? search our stock list here!</p>
+        </div>
+
+        <div class="pg-front-search-item pg-front-search-item--body">
+          <div class="pg-fron-search-item--inner">
+            <div class="pg-front-search-form">
+              <label class="front-search-label" for="maker">Maker</label>
+              <div class="md-select front-search-select">
+                <select name="maker" id="">
+                  <option value="">Select</option>
+                  <option value="toyota">TOYOTA</option>
+                  <option value="nissan">NISSAN</option>
+                  <option value="bmw">BMW</option>
+                  <option value="subaru">SUBARU</option>
+                </select>
+              </div>
+            </div>
+  
+            <div class="pg-front-search-form">
+              <label class="front-search-label" for="model">Model</label>
+              <div class="md-select front-search-select">
+                <select name="model" id="">
+                  <option value="">Select</option>
+                  <option value="ix">iX</option>
+                  <option value="ix_m60">iX M60</option>
+                  <option value="i7">i7</option>
+                  <option value="i7m_70_xdrive">i7 M70 xDrive</option>
+                </select>
+              </div>
+            </div>
+  
+            <div class="pg-front-search-form">
+              <label class="front-search-label" for="price">Price</label>
+              <div class="md-select front-search-select">
+                <select name="price" id="">
+                  <option value="">Select</option>
+                  <option value="5">50,000</option>
+                  <option value="10">100,000</option>
+                  <option value="15">150,000</option>
+                  <option value="20">200,000</option>
+                </select>
+              </div>
+              <div class="front-search-code"><span>〜</span></div>
+              <div class="md-select front-search-select">
+                <select name="price" id="">
+                  <option value="">Select</option>
+                  <option value="5">50,000</option>
+                  <option value="10">100,000</option>
+                  <option value="15">150,000</option>
+                  <option value="20">200,000</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="pg-fron-search-item--inner">
+            <div class="pg-front-search-form">
+              <label class="front-search-label" for="time">Year</label>
+              <div class="md-select front-search-select">
+                <select name="time" id="">
+                  <option value="">Year</option>
+                  <option value="2000">2000</option>
+                  <option value="2001">2001</option>
+                  <option value="2002">2002</option>
+                  <option value="2003">2003</option>
+                </select>
+                <select name="time" id="">
+                  <option value="">Month</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </div>
+              <div class="front-search-code"><span>〜</span></div>
+              <div class="md-select front-search-select">
+                <select name="model" id="">
+                  <option value="">Year</option>
+                  <option value="2000">2000</option>
+                  <option value="2001">2001</option>
+                  <option value="2002">2002</option>
+                  <option value="2003">2003</option>
+                </select>
+                <select name="model" id="">
+                  <option value="">Month</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </div>
+            </div>
+  
+            <div class="pg-front-search-form">
+              <label class="front-search-label" for="mileage">Mileage</label>
+              <div class="md-select front-search-select">
+                <select name="mileage" id="">
+                  <option value="">Min Mileage</option>
+                  <option value="1">10,000</option>
+                  <option value="3">30,000</option>
+                  <option value="5">50,000</option>
+                  <option value="10">100,000</option>
+                </select>
+              </div>
+              <div class="front-search-code"><span>〜</span></div>
+              <div class="md-select front-search-select">
+                <select name="mileage" id="">
+                  <option value="">Max Mileage</option>
+                  <option value="1">10,000</option>
+                  <option value="3">30,000</option>
+                  <option value="5">50,000</option>
+                  <option value="10">100,000</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="pg-front-search-btn-wrap">
+            <button class="md-btn front-search-btn">Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ly-section pg-front-news">
+      <h2 class="md-ttl1">NEWS</h2>
+
+      <div class="pg-front-news-card-group">
+        <div class="pg-front-news-card">
+          <a href="">
+            <div class="card-images">
+              <img src="./assets/images/news_sample01.jpg" alt="">
+              <div class="card-date"><span class="date">2023.06.08</span></div>
+            </div>
+            <div class="card-caption">
+              We’ve been to Tokyo Auto Salon before everyone does.
+            </div>
+          </a>
+        </div>
+
+        <div class="pg-front-news-card">
+          <a href="">
+            <div class="card-images">
+              <img src="./assets/images/news_sample02.jpg" alt="">
+              <div class="card-date"><span class="date">2023.06.08</span></div>
+            </div>
+            <div class="card-caption">
+              TOKYO AUTO SALON TOYOTA GR & MODELISTA BOOTH
+            </div>
+          </a>
+        </div>
+
+        <div class="pg-front-news-card">
+          <a href="">
+            <div class="card-images">
+              <img src="./assets/images/news_sample03.jpg" alt="">
+              <div class="card-date"><span class="date">2023.06.08</span></div>
+            </div>
+            <div class="card-caption">
+              We’ve been to Tokyo Auto Salon before everyone does.
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="pg-front-news-btn-wrap">
+        <a href="" class="md-btn front-news-btn">MORE</a>
+      </div>
+    </section>
+
+    <section class="pg-front-cta">
+      <div class="pg-front-cta-bg">
+        <!-- 乗算している帯用のdiv -->
+      </div>
+      <div class="pg-front-cta-inner">
+        <div class="ttl">Get in touch<br class="u-mobile"> with us anytime</div>
+        <div class="pg-front-cta-btn-wrap">
+          <a href="" class="md-btn front-cta-btn">CONTACT</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ly-section pg-front-new">
+      <h2 class="md-ttl1">NEW ARRIVAL</h2>
+
+      <ul class="pg-front-new-makers">
+        <li class="pg-front-new-maker">
+          <img src="./assets/images/car_logo/mercedes.png" alt="logo:MERCEDES">
+          <span class="name">MERCEDES</span>
+        </li>
+        <li class="pg-front-new-maker">
+          <img src="./assets/images/car_logo/mazda.png" alt="logo:MAZDA">
+          <span class="name">MAZDA</span>
+        </li>
+        <li class="pg-front-new-maker">
+          <img src="./assets/images/car_logo/lexus.png" alt="logo:LEXUS">
+          <span class="name">LEXUS</span>
+        </li>
+        <li class="pg-front-new-maker">
+          <img src="./assets/images/car_logo/bentley.png" alt="logo:BENTLEY">
+          <span class="name">BENTLEY</span>
+        </li>
+        <li class="pg-front-new-maker">
+          <img src="./assets/images/car_logo/honda.png" alt="logo:HONDA">
+          <span class="name">HONDA</span>
+        </li>
+        <li class="pg-front-new-maker">
+          <img src="./assets/images/car_logo/toyota.png" alt="logo:TOYOTA">
+          <span class="name">TOYOTA</span>
+        </li>
+        <li class="pg-front-new-maker">
+          <img src="./assets/images/car_logo/nissan.png" alt="logo:NISSAN">
+          <span class="name">NISSAN</span>
+        </li>
+        <li class="pg-front-new-maker">
+          <img src="./assets/images/car_logo/mitsubishi.png" alt="logo:MITSUBISHI">
+          <span class="name">MITSUBISHI</span>
+        </li>
+        <li class="pg-front-new-maker">
+          <img src="./assets/images/car_logo/bmw.png" alt="logo:BMW">
+          <span class="name">BMW</span>
+        </li>
+        <li class="pg-front-new-maker">
+          <img src="./assets/images/car_logo/subaru.png" alt="logo:SUBARU">
+          <span class="name">SUBARU</span>
+        </li>
+        <li class="pg-front-new-maker">
+          <img src="./assets/images/car_logo/acura.png" alt="logo:ACURA">
+          <span class="name">ACURA</span>
+        </li>
+        <li class="pg-front-new-maker">
+          <span class="name name--txt">OTHRES</span>
+        </li>
+      </ul>
+
+      <div class="pg-front-new-body">
+        <div class="pg-front-new-side">
+          <div class="ttl">Search By Type</div>
+          <ul class="pg-front-new-types">
+            <li class="pg-front-new-type">
+              <img src="./assets/images/car_icon/sedan.png" alt="icon:Sedan">
+              <span class="name">Sedan</span>
+            </li>
+            <li class="pg-front-new-type">
+              <img src="./assets/images/car_icon/suv.png" alt="icon:SUV">
+              <span class="name">SUV</span>
+            </li>
+            <li class="pg-front-new-type">
+              <img src="./assets/images/car_icon/station_wagon.png" alt="icon:Stationwagon">
+              <span class="name">Stationwagon</span>
+            </li>
+            <li class="pg-front-new-type">
+              <img src="./assets/images/car_icon/compact.png" alt="icon:Compact">
+              <span class="name">Compact</span>
+            </li>
+            <li class="pg-front-new-type">
+              <img src="./assets/images/car_icon/coupe.png" alt="icon:Coupe">
+              <span class="name">Coupe</span>
+            </li>
+            <li class="pg-front-new-type">
+              <img src="./assets/images/car_icon/cabriolet.png" alt="icon:Cabriolet/Roadster">
+              <span class="name name--sp">Cabriolet<br>Roadster</span>
+              <span class="name name--pc">Cabriolet/Roadster</span>
+            </li>
+            <li class="pg-front-new-type">
+              <img src="./assets/images/car_icon/minivan.png" alt="icon:Minivan">
+              <span class="name">Minivan</span>
+            </li>
+            <li class="pg-front-new-type">
+              <div class="label">ALL</div>
+              <span class="name">All</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pg-front-new-main">
+          <div class="pg-front-new-card">
+            <figure class="card-image">
+              <a href="">
+                <img src="./assets/images/car_sample01.png" alt="">
+              </a>
+            </figure>
+            <ul class="card-info">
+              <li class="maker"><span class="label">Maker : </span>TOYOTA</li>
+              <li class="name"><span class="label">Model Name : </span>VELLFIRE</li>
+              <li class="ttl"><span class="label">Title : </span>2018 Vellfire 3.5 ZG Black (202)</li>
+              <li class="price">¥ 0</li>
+            </ul>
+          </div>
+
+          <div class="pg-front-new-card">
+            <figure class="card-image">
+              <a href="">
+                <img src="./assets/images/car_sample01.png" alt="">
+              </a>
+            </figure>
+            <ul class="card-info">
+              <li class="maker"><span class="label">Maker : </span>TOYOTA</li>
+              <li class="name"><span class="label">Model Name : </span>VELLFIRE</li>
+              <li class="ttl"><span class="label">Title : </span>2018 Vellfire 3.5 ZG Black (202)</li>
+              <li class="txt js-limit">雙天窗 三電門 四電座 中椅 3眼LED 是啤軚</li>
+              <li class="price">¥ 5,400,000.00</li>
+            </ul>
+          </div>
+
+          <div class="pg-front-new-card">
+            <figure class="card-image">
+              <a href="">
+                <img src="./assets/images/car_sample02.png" alt="">
+              </a>
+            </figure>
+            <ul class="card-info">
+              <li class="maker"><span class="label">Maker : </span>TOYOTA</li>
+              <li class="name"><span class="label">Model Name : </span>VELLFIRE</li>
+              <li class="ttl"><span class="label">Title : </span>2018 Vellfire 3.5 ZG Black (202)</li>
+              <li class="txt js-limit">雙天窗 三電門7座中椅 三眼LED 電子後視鏡 JBL TV 17喇叭 360泊車鏡頭 原廠皮座 中排</li>
+              <li class="price">¥ 6,760,000.00</li>
+            </ul>
+          </div>
+
+          <div class="pg-front-new-card">
+            <figure class="card-image">
+              <a href="">
+                <img src="./assets/images/car_sample03.png" alt="">
+              </a>
+            </figure>
+            <ul class="card-info">
+              <li class="maker"><span class="label">Maker : </span>TOYOTA</li>
+              <li class="name"><span class="label">Model Name : </span>VELLFIRE</li>
+              <li class="ttl"><span class="label">Title : </span>2018 Vellfire 3.5 ZG Black (202)</li>
+              <li class="price">¥ 0</li>
+            </ul>
+          </div>
+
+          <div class="pg-front-new-card">
+            <figure class="card-image">
+              <a href="">
+                <img src="./assets/images/car_sample02.png" alt="">
+              </a>
+            </figure>
+            <ul class="card-info">
+              <li class="maker"><span class="label">Maker : </span>TOYOTA</li>
+              <li class="name"><span class="label">Model Name : </span>VELLFIRE</li>
+              <li class="ttl"><span class="label">Title : </span>2018 Vellfire 3.5 ZG Black (202)</li>
+              <li class="txt js-limit">雙天窗 三電門 四電座 中椅 3眼LED 是啤軚</li>
+              <li class="price">¥ 5,400,000.00</li>
+            </ul>
+          </div>
+
+          <div class="pg-front-new-card">
+            <figure class="card-image">
+              <a href="">
+                <img src="./assets/images/car_sample03.png" alt="">
+              </a>
+            </figure>
+            <ul class="card-info">
+              <li class="maker"><span class="label">Maker : </span>TOYOTA</li>
+              <li class="name"><span class="label">Model Name : </span>VELLFIRE</li>
+              <li class="ttl"><span class="label">Title : </span>2018 Vellfire 3.5 ZG Black (202)</li>
+              <li class="txt js-limit">我们拥有广泛的汽车选择，无论是家用轿车、跨界车还是豪华轿车，我们都可以满足您的需求。我们的专业销售团队将为您提供最新的汽车特性和性能信息，以及完善的售后服务。</li>
+              <li class="price">¥ 6,760,000.00</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="ly-footer">
+    <div class="ly-footer-inner">
+      <div class="ly-footer-item ly-footer-item--link">
+        <ul class="footer-link">
+          <li><a href="">Terms of Use</a></li>
+          <li><a href="">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="ly-footer-item ly-footer-item--contact">
+        <a class="md-btn footer-btn" href="">Contact Us</a>
+      </div>
+      <div class="ly-footer-item ly-footer-item--logo">
+        <img src="./assets/images/footer_logo.png" srcset="./assets/images/footer_logo@2x.png 2x" alt="LOGO: OFUKA INTERNATIONAL INC.">
+      </div>
+      <div class="ly-footer-item ly-footer-item--copy">
+        <span class="copylight">© 2023 All right reserved. Ofuka Intemational Inc.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS(スクリプト) -->
+  <script src="./assets/js/base.js"></script>
+</body>
+
+</html>

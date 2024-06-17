@@ -1,0 +1,76 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// filter
+// -----------------------------------------------------------------
+.ly-filter {
+  position: fixed;
+  top: 47px;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  height: calc(100% - 47px);
+  padding: 30px 15px;
+  overflow-y: scroll;
+  visibility: hidden;
+  background-color: #F7F7F7;
+  opacity: 0;
+
+  @include transition;
+
+  @media #{$mq-md} {
+    position: static;
+    top: auto;
+    left: auto;
+    z-index: inherit;
+    width: inherit;
+    height: inherit;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+// 閉じるボタン
+.ly-filter-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+
+  @media #{$mq-md} {
+    display: none;
+  }
+}
+
+.ly-filter-close-btn-inner {
+  position: relative;
+  display: block;
+  width: 26px;
+  height: 1px;
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+  }
+
+  span:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  span:nth-child(2) {
+    transform: rotate(-45deg);
+  }
+}

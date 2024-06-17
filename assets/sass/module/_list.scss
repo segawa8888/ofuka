@@ -1,0 +1,26 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// オプション リスト
+// -----------------------------------------------------------------
+.md-option-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  li {
+    padding: 5px;
+    color: #BABABA;
+    text-align: center;
+    border: 1px solid $border;
+
+    &.is-active {
+      color: $orange1;
+      background-color: $orange2;
+      border: none;
+      border-color: $orange2;
+    }
+  }
+}

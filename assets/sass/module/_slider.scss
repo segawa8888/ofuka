@@ -1,0 +1,294 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// おすすめ slider
+// -----------------------------------------------------------------
+.md-recom-slider {
+  margin-inline: -10px;
+
+  @media #{$mq-md} {
+    margin-inline: -15px;
+  }
+
+  .slick-arrow {
+    z-index: 1;
+  }
+
+  // arrow
+  .md-recom-slider-arrow {
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+    transform: translateY(-50%);
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      display: block;
+      width: 15px;
+      height: 15px;
+      content: '';
+      background-repeat: no-repeat;
+      background-position: top 50% left 50%;
+      background-size: contain;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.md-recom-slider-arrow--right {
+  right: 0;
+
+  @media #{$mq-md} {
+    right: -30px;
+  }
+
+  &::before {
+    background-image: url('../images/arrow_right.svg');
+  }
+}
+
+.md-recom-slider-arrow--left {
+  left: 0;
+
+  @media #{$mq-md} {
+    left: -30px;
+  }
+
+  &::before {
+    background-image: url('../images/arrow_left.svg');
+  }
+}
+
+// slider
+.md-recom-slider-item-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 20px;
+  padding-bottom: 5px;  /* ボックスの影の分 */
+  margin-inline: 10px;
+
+  @media #{$mq-md} {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-inline: 15px;
+  }
+}
+
+// カード
+.md-recom-card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 15%);
+
+  @include transition;
+
+  &:hover {
+    opacity: .8;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    opacity: .8;
+  }
+}
+
+.md-recom-card-img img {
+  width: 100%;
+  aspect-ratio: 161/102;
+  border-radius: 5px 5px 0 0;
+  object-fit: cover;
+}
+
+// レコメンドラベル
+.md-recom-card-img {
+  position: relative;
+
+  .label-recommend {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 23px;
+    padding-right: 7px;
+    padding-left: 5px;
+    font-weight: bold;
+    color: #fff;
+    background: rgb(235,143,50);
+    background: linear-gradient(180deg, rgba(235,143,50,1) 0%, rgba(239,203,124,1) 50%, rgba(193,89,25,1) 100%);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: -15px;
+      display: block;
+      width: 15px;
+      height: 23px;
+      clip-path: polygon(100% 0, 0 0, 100% 100%);
+      content: '';
+      background: rgb(235,143,50);
+      background: linear-gradient(180deg, rgba(235,143,50,1) 0%, rgba(239,203,124,1) 50%, rgba(193,89,25,1) 100%);
+    }
+  }
+}
+
+.md-recom-card-body {
+  padding: 10px;
+  line-height: 1.3;
+
+  @include font-rem(12);
+
+  @media #{$mq-md} {
+    padding: 15px;
+
+    @include font-rem(16);
+  }
+
+  .price {
+    @include font-rem(14);
+
+    font-weight: bold;
+    color: $orange1;
+
+    @media #{$mq-md} {
+      @include font-rem(20);
+    }
+  }
+
+  .list {
+    display: flex;
+    padding: 0;
+    margin: 10px 0 0;
+    list-style-type: none;
+
+    li + li::before {
+      margin-inline: 5px;
+      content: '/';
+    }
+  }
+}
+
+// -----------------------------------------------------------------
+// 詳細用のサムネイル付きスライダー
+// -----------------------------------------------------------------
+// /pages/search_details.scss にも記述がありますが
+// こちらにはスライダーの挙動に関わる部分スタイリングしています。
+// -----------------------------------------------------------------
+.md-gallery-slider-sub {
+  position: relative;
+
+  // PC時、サムネイルはスライドしない
+  @media #{$mq-md} {
+    .slick-track {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 10px;
+      width: 100% !important;
+      transform: unset !important;
+    }
+
+    .slick-track::before,
+    .slick-track::after {
+      display: none;
+    }
+
+    .slick-slide {
+      width: auto !important;
+    }
+  }
+}
+
+.md-gallery-slider-sub-arrow {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 5px;
+  height: 10px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: top 50% left 50%;
+  background-size: contain;
+  transform: translateY(-50%);
+
+  &.md-gallery-slider-sub-arrow--left {
+    left: -10px;
+    background-image: url('../images/arrow_black_left.svg');
+  }
+
+  &.md-gallery-slider-sub-arrow--right {
+    right: -10px;
+    background-image: url('../images/arrow_black_right.svg');
+  }
+
+  &.slick-disabled {
+    opacity: .3;
+  }
+}
+
+.md-gallery-slider-main {
+  position: relative;
+}
+
+// 矢印
+.md-gallery-slider-main-arrow {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 12px;
+  height: 24px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: top 50% left 50%;
+  background-size: contain;
+  transform: translateY(-50%);
+
+  &.md-gallery-slider-main-arrow--left {
+    left: 10px;
+    background-image: url('../images/arrow_white_left.svg');
+  }
+
+  &.md-gallery-slider-main-arrow--right {
+    right: 10px;
+    background-image: url('../images/arrow_white_right.svg');
+  }
+
+  &.slick-disabled {
+    opacity: .3;
+  }
+}
+
+// スライドイン用
+
+.fade-in {
+  opacity: 0;
+  transition-duration: 700ms;
+  transition-property: opacity, transform;
+}
+
+.fade-in-up {
+  transform: translate(0, 50px);
+}
+
+.fade-in-down {
+  transform: translate(0, -50px);
+}
+
+.fade-in-left {
+  transform: translate(-50px, 0);
+}
+
+.fade-in-right {
+  transform: translate(50px, 0);
+}
+
+.scroll-in {
+  opacity: 1;
+  transform: translate(0, 0);
+}

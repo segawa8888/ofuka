@@ -1,0 +1,71 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// bodyやhtmlなどの基本CSS
+// -----------------------------------------------------------------
+body {
+  font-family: Avenir, system-ui, -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #000;
+  background-color: #fff;
+  text-size-adjust: 100%;
+
+  // filterが出てるときはスクロールさせない
+  &.is-stop {
+    overflow: hidden;
+  }
+}
+
+img {
+  display: inline-block;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// -----------------------------------------------------------------
+// ページ全体で使うCSS
+// -----------------------------------------------------------------
+// 横幅1000px
+.ly-section {
+  margin-inline: 15px;
+
+  @media #{$mq-md} {
+    max-width: 1040px;
+    margin-inline: auto;
+    padding:0 20px;
+  }
+}
+
+// パンくずリスト
+.ly-breadcramb {
+  padding-top: 47px;  /* headerの分さげる */
+
+  @media #{$mq-md} {
+    padding-top: 81px;
+  }
+}
+
+// PC,SP切り替え用
+
+// 960px以下で非表示
+.u-desktop {
+  display: none;
+  @media #{$mq-md} {
+    display: block;
+  }
+}
+
+//960px以上で非表示
+.u-mobile {
+  display: block;
+  @media #{$mq-md} {
+    display: none;
+  }
+}

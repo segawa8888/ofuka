@@ -1,0 +1,51 @@
+@use '../global'as *;
+
+// -----------------------------------------------------------------
+// 下層ページ タイトル
+// -----------------------------------------------------------------
+
+.md-page-title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    @media #{$mq-md} {
+        position: initial;
+        max-width: 1000px;
+        width: 100%;
+        margin-inline: auto;
+      }
+}
+
+.md-page-title h2 {
+    position: relative;
+    background-color: $orange1;
+    @include font-rem(20);
+    line-height: calc(27 / 20);
+    color:$white;
+    font-weight: 700;
+    padding:11.5px 67px 12.1px 15px;
+    @media #{$mq-md} {
+        padding:20px 46px 20px 20px;
+        max-width: 100%;
+        text-align: right;
+        margin-left: calc(-810 / 1500 * 100rem);
+        @include font-rem(35);
+      }
+      @media (min-width:960px) and (max-width: 1030px) {
+        margin-left: calc(-750 / 1500 * 100rem);
+    }
+}
+
+.md-page-title h2::after {
+    content: '';
+    position: absolute;
+    right: -39px;
+    bottom: 0;
+    border-style: solid;
+    border-color: transparent transparent $orange1 transparent;
+    border-width: 0 40px 50.59px 0;
+    @media #{$mq-md} {
+        right:-45px;
+        border-width: 0 46px 88px 0;
+      }
+}
